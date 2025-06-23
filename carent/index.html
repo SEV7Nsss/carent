@@ -76,6 +76,22 @@
     window.location.href = 'main.html';
   });
 </script>
+  <script>
+document.getElementById('regForm').addEventListener('submit', function(e) {
+    e.preventDefault();
 
+    const name = document.getElementById('name').value;
+    const code = document.getElementById('code').value;
+
+    localStorage.setItem('userName', name);
+
+    // 🔐 Проверка на admin-код
+    if (code === 'admin123') {
+      window.location.href = 'admin.html'; // переход на admin.html
+    } else {
+      window.location.href = 'main.html'; // переход на обычную главную
+    }
+  });
+</script>
 </body>
 </html>
