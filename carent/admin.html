@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Админ-панель — CarRent</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f9f9f9; padding: 30px; }
+    h1 { text-align: center; }
+    .container { max-width: 800px; margin: auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px #ccc; }
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+    th, td { border: 1px solid #ccc; padding: 10px; text-align: left; }
+    form input, form button { padding: 10px; margin: 5px 0; width: 100%; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Панель администратора</h1>
+
+    <h2>Добавить автомобиль</h2>
+    <form id="addCarForm">
+      <input type="text" placeholder="Марка" required>
+      <input type="text" placeholder="Модель" required>
+      <input type="number" placeholder="Год выпуска" required>
+      <input type="number" placeholder="Цена ₽ в день" required>
+      <button type="submit">Добавить</button>
+    </form>
+
+    <h2>Список автомобилей</h2>
+    <table>
+      <thead>
+        <tr><th>Марка</th><th>Модель</th><th>Год</th><th>Цена</th><th>Действия</th></tr>
+      </thead>
+      <tbody id="carTable">
+        <!-- Примеры авто -->
+        <tr><td>LADA</td><td>Vesta</td><td>2022</td><td>1200 ₽</td><td><button>Удалить</button></td></tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
