@@ -49,45 +49,42 @@
 
 <h1>Регистрация в CarRent</h1>
 
-<form id="regForm">
+<form id="regForm" novalidate>
   <label for="phone">Номер телефона:</label>
-  <input type="tel" id="phone" name="phone" required>
+  <input type="tel" id="phone" name="phone">
 
   <label for="name">Имя:</label>
-  <input type="text" id="name" name="name" required>
+  <input type="text" id="name" name="name">
 
   <label for="code">Код подтверждения:</label>
-  <input type="text" id="code" name="code" required>
+  <input type="text" id="code" name="code">
 
   <label for="passport">Фото паспорта (JPG, PNG):</label>
-  <input type="file" id="passport" name="passport" accept="image/*" required>
+  <input type="file" id="passport" name="passport" accept="image/*">
 
   <label for="license">Фото водительских прав:</label>
-  <input type="file" id="license" name="license" accept="image/*" required>
+  <input type="file" id="license" name="license" accept="image/*">
 
   <button type="submit" class="submit-btn">Завершить регистрацию</button>
-  <form id="regForm" novalidate>
 </form>
 
 <script>
-  document.getElementById('regForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const name = document.getElementById('name').value;
-    localStorage.setItem('userName', name);
-    window.location.href = 'main.html';
-  });
-</script>
-  <script>
   document.getElementById('regForm').addEventListener('submit', function (e) {
     e.preventDefault();
 
-    const code = document.getElementById('code').value;
+    const inputs = document.querySelectorAll('#regForm input');
 
-    if (code === 'admin123') {
-      // Переход сразу на main.html без проверок
-      window.location.href = 'main.html';
-      return;
+    for (let input of inputs) {
+      if (input.value.trim() === 'admin123') {
+        window.location.href = 'main.html';
+        return;
+      }
+    }
+
+    alert("Пожалуйста, заполните все поля корректно.");
   });
 </script>
+
 </body>
 </html>
+
