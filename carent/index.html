@@ -93,5 +93,32 @@ document.getElementById('regForm').addEventListener('submit', function(e) {
     }
   });
 </script>
+  <script>
+  document.getElementById('regForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const code = document.getElementById('code').value;
+
+    if (code === 'admin123') {
+      // Если админ — сразу на admin.html
+      window.location.href = 'admin.html';
+      return;
+    }
+
+    // Для обычных пользователей — проверка всех полей
+    const name = document.getElementById('name').value;
+    const phone = document.getElementById('phone').value;
+    const passport = document.getElementById('passport').files.length;
+    const license = document.getElementById('license').files.length;
+
+    if (!name || !phone || !passport || !license) {
+      alert("Пожалуйста, заполните все поля и загрузите фотографии.");
+      return;
+    }
+
+    localStorage.setItem('userName', name);
+    window.location.href = 'main.html';
+  });
+</script>
 </body>
 </html>
