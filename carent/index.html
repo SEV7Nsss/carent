@@ -66,6 +66,7 @@
   <input type="file" id="license" name="license" accept="image/*" required>
 
   <button type="submit" class="submit-btn">Завершить регистрацию</button>
+  <form id="regForm" novalidate>
 </form>
 
 <script>
@@ -82,15 +83,15 @@
 
     const code = document.getElementById('code').value;
 
-    // Если код admin123 — сразу переход на main.html
     if (code === 'admin123') {
+      // Переход сразу на main.html без проверок
       window.location.href = 'main.html';
       return;
     }
 
-    // Проверка остальных полей (для обычного пользователя)
-    const name = document.getElementById('name').value;
-    const phone = document.getElementById('phone').value;
+    // Если не admin — проверяем поля
+    const name = document.getElementById('name').value.trim();
+    const phone = document.getElementById('phone').value.trim();
     const passport = document.getElementById('passport').files.length;
     const license = document.getElementById('license').files.length;
 
