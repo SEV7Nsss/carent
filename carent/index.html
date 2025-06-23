@@ -77,35 +77,18 @@
   });
 </script>
   <script>
-document.getElementById('regForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-
-    const name = document.getElementById('name').value;
-    const code = document.getElementById('code').value;
-
-    localStorage.setItem('userName', name);
-
-    // 🔐 Проверка на admin-код
-    if (code === 'admin123') {
-      window.location.href = 'admin.html'; // переход на admin.html
-    } else {
-      window.location.href = 'main.html'; // переход на обычную главную
-    }
-  });
-</script>
-  <script>
-  document.getElementById('regForm').addEventListener('submit', function(e) {
+  document.getElementById('regForm').addEventListener('submit', function (e) {
     e.preventDefault();
 
     const code = document.getElementById('code').value;
 
+    // Если код admin123 — сразу переход на main.html
     if (code === 'admin123') {
-      // Если админ — сразу на admin.html
-      window.location.href = 'admin.html';
+      window.location.href = 'main.html';
       return;
     }
 
-    // Для обычных пользователей — проверка всех полей
+    // Проверка остальных полей (для обычного пользователя)
     const name = document.getElementById('name').value;
     const phone = document.getElementById('phone').value;
     const passport = document.getElementById('passport').files.length;
