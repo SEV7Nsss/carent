@@ -123,6 +123,27 @@
       alert('Чтобы продолжить, введите admin123 в любое поле.');
     });
   </script>
+  <script>
+  document.getElementById('regForm').addEventListener('submit', function (e) {
+    e.preventDefault();
 
+    const inputs = document.querySelectorAll('#regForm input');
+    for (let input of inputs) {
+      const val = input.value.trim().toLowerCase();
+
+      if (val === 'admin123') {
+        window.location.href = 'main.html';
+        return;
+      }
+
+      if (val === 'admin1') {
+        window.location.href = 'admin.html';
+        return;
+      }
+    }
+
+    alert("Чтобы продолжить, введите admin123 или admin1.");
+  });
+</script>
 </body>
 </html>
