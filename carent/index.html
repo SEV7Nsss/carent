@@ -1,19 +1,26 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Регистрация — CarRent</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
+    /* Фоновое изображение на всю страницу */
     body {
       font-family: Arial, sans-serif;
-      background-color: #fffff8;
-      padding: 40px;
       margin: 0;
+      padding: 40px;
+      background-image: url('https://sev7nsss.github.io/carent/carent/assets/images/blog-4.jpg');
+      background-size: cover;        /* картинка растягивается, сохраняя пропорции */
+      background-position: center;   /* центрируем фон */
+      background-repeat: no-repeat;
+      background-attachment: fixed;  /* фон фиксируется при прокрутке */
+      color: white;                  /* чтобы текст был виден на фоне */
+      text-shadow: 0 0 5px black;    /* тень для текста для читаемости */
     }
 
     .header {
-      background: #f0f8ff;
+      background: rgba(240, 248, 255, 0.7); /* полупрозрачный светлый фон */
       position: fixed;
       top: 0;
       left: 0;
@@ -22,20 +29,26 @@
       text-align: center;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       z-index: 1000;
+      color: black; /* заголовок в шапке черный */
+      text-shadow: none;
     }
 
     h1 {
       text-align: center;
       margin-top: 100px;
+      color: white;
+      text-shadow: 0 0 7px black;
     }
 
     form {
       max-width: 500px;
       margin: 30px auto 0;
-      background-color: white;
+      background-color: rgba(255, 255, 255, 0.9); /* полупрозрачный белый фон */
       padding: 30px;
       border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      color: black;
+      text-shadow: none;
     }
 
     label {
@@ -47,6 +60,8 @@
       width: 100%;
       padding: 10px;
       margin-top: 5px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
     }
 
     .submit-btn {
@@ -58,24 +73,11 @@
       margin-top: 25px;
       cursor: pointer;
       font-size: 16px;
+      border-radius: 4px;
     }
 
     .submit-btn:hover {
       background-color: #333;
-    }
-
-    .car-gallery {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      margin-top: 50px;
-    }
-
-    .car-gallery img {
-      width: 300px;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
   </style>
 </head>
@@ -89,29 +91,22 @@
 
   <form id="regForm" novalidate>
     <label for="phone">Номер телефона:</label>
-    <input type="tel" id="phone" name="phone">
+    <input type="tel" id="phone" name="phone" />
 
     <label for="name">Имя:</label>
-    <input type="text" id="name" name="name">
+    <input type="text" id="name" name="name" />
 
     <label for="code">Код подтверждения:</label>
-    <input type="text" id="code" name="code">
+    <input type="text" id="code" name="code" />
 
     <label for="passport">Фото паспорта (JPG, PNG):</label>
-    <input type="file" id="passport" name="passport" accept="image/*">
+    <input type="file" id="passport" name="passport" accept="image/*" />
 
     <label for="license">Фото водительских прав:</label>
-    <input type="file" id="license" name="license" accept="image/*">
+    <input type="file" id="license" name="license" accept="image/*" />
 
     <button type="submit" class="submit-btn">Завершить регистрацию</button>
   </form>
-  <section>
-    <h2 style="text-align: center; margin-top: 60px;">Наши автомобили</h2>
-    <div class="car-gallery">
-      <img src="assets/images/Audi R8 V10 Plus.jpg" alt="Автомобиль 1">
-      <img src="assets/images/AUDI R8.jpg" alt="Автомобиль 2">
-    </div>
-  </section>
 
   <script>
     document.getElementById('regForm').addEventListener('submit', function (e) {
@@ -125,7 +120,7 @@
           return;
         }
       }
-      alert("Чтобы продолжить, введите admin123 в любое поле.");
+      alert('Чтобы продолжить, введите admin123 в любое поле.');
     });
   </script>
 
