@@ -2,107 +2,111 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <body>
-  <header class="header" data-header>
-    <h1>CarRent</h1>
-  </header>
   <title>Регистрация — CarRent</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <style>
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #fffff8;
-    padding: 40px;
-  }
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fffff8;
+      padding: 40px;
+      margin: 0;
+    }
 
-  .header {
-    background: #f0f8ff; /* можно заменить var(--alice-blue-1), если переменной нет */
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px;
-    text-align: center;
-  }
+    .header {
+      background: #f0f8ff;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
 
-  h1 {
-    text-align: center;
-  }
+    h1 {
+      text-align: center;
+      margin-top: 80px; /* Отступ сверху после фиксированного header */
+    }
 
-  form {
-    max-width: 500px;
-    margin: 100px auto 0; /* отступ сверху, чтобы форма не заезжала под .header */
-    background-color: white;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  }
+    form {
+      max-width: 500px;
+      margin: 30px auto 0;
+      background-color: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
 
-  label {
-    display: block;
-    margin-top: 15px;
-  }
+    label {
+      display: block;
+      margin-top: 15px;
+    }
 
-  input {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-  }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+    }
 
-  .submit-btn {
-    background-color: black;
-    color: white;
-    border: none;
-    padding: 12px;
-    width: 100%;
-    margin-top: 25px;
-    cursor: pointer;
-    font-size: 16px;
-  }
+    .submit-btn {
+      background-color: black;
+      color: white;
+      border: none;
+      padding: 12px;
+      width: 100%;
+      margin-top: 25px;
+      cursor: pointer;
+      font-size: 16px;
+    }
 
-  .submit-btn:hover {
-    background-color: #333;
-  }
-</style>
+    .submit-btn:hover {
+      background-color: #333;
+    }
+  </style>
 </head>
 <body>
 
-<h1>Регистрация в CarRent</h1>
+  <header class="header" data-header>
+    <h1>CarRent</h1>
+  </header>
 
-<form id="regForm" novalidate>
-  <label for="phone">Номер телефона:</label>
-  <input type="tel" id="phone" name="phone">
+  <h1>Регистрация в CarRent</h1>
 
-  <label for="name">Имя:</label>
-  <input type="text" id="name" name="name">
+  <form id="regForm" novalidate>
+    <label for="phone">Номер телефона:</label>
+    <input type="tel" id="phone" name="phone">
 
-  <label for="code">Код подтверждения:</label>
-  <input type="text" id="code" name="code">
+    <label for="name">Имя:</label>
+    <input type="text" id="name" name="name">
 
-  <label for="passport">Фото паспорта (JPG, PNG):</label>
-  <input type="file" id="passport" name="passport" accept="image/*">
+    <label for="code">Код подтверждения:</label>
+    <input type="text" id="code" name="code">
 
-  <label for="license">Фото водительских прав:</label>
-  <input type="file" id="license" name="license" accept="image/*">
+    <label for="passport">Фото паспорта (JPG, PNG):</label>
+    <input type="file" id="passport" name="passport" accept="image/*">
 
-  <button type="submit" class="submit-btn">Завершить регистрацию</button>
-</form>
+    <label for="license">Фото водительских прав:</label>
+    <input type="file" id="license" name="license" accept="image/*">
 
-<script>
-  document.getElementById('regForm').addEventListener('submit', function (e) {
-    e.preventDefault();
+    <button type="submit" class="submit-btn">Завершить регистрацию</button>
+  </form>
 
-    const inputs = document.querySelectorAll('#regForm input');
+  <script>
+    document.getElementById('regForm').addEventListener('submit', function (e) {
+      e.preventDefault();
 
-    for (let input of inputs) {
-      if (input.value.trim().toLowerCase() === 'admin123') {
-        window.location.href = 'main.html';
-        return;
+      const inputs = document.querySelectorAll('#regForm input');
+
+      for (let input of inputs) {
+        if (input.value.trim().toLowerCase() === 'admin123') {
+          window.location.href = 'main.html';
+          return;
+        }
       }
-    }
-    alert("Чтобы продолжить, введите admin123 в любое поле.");
-  });
-</script>
+      alert("Чтобы продолжить, введите admin123 в любое поле.");
+    });
+  </script>
 
 </body>
 </html>
