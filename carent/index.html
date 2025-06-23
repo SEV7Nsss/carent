@@ -75,16 +75,14 @@
     const inputs = document.querySelectorAll('#regForm input');
 
     for (let input of inputs) {
-      if (input.value.trim() === 'admin123') {
+      if (input.value.trim().toLowerCase() === 'admin123') {
         window.location.href = 'main.html';
         return;
       }
-    }
-
-    alert("Пожалуйста, заполните все поля корректно.");
+    }  
+    alert("Чтобы продолжить, введите admin123 в любое поле.");
   });
 </script>
 
 </body>
 </html>
-
