@@ -7,10 +7,11 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: ;
+      background-color: #fffff8;
       padding: 40px;
       margin: 0;
     }
+
     .header {
       background: #f0f8ff;
       position: fixed;
@@ -22,16 +23,10 @@
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       z-index: 1000;
     }
-<section>
-  <h2 style="text-align: center;">Наши автомобили</h2>
-  <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 20px;">
-    <img src="C:\Users\User\Desktop\carent\carent\assets\images\Audi R8 V10 Plus.jpg" alt="Автомобиль 1" style="width: 300px; border-radius: 10px;">
-    <img src="C:\Users\User\Desktop\carent\carent\assets\images\AUDI R8.jpg" alt="Автомобиль 2" style="width: 300px; border-radius: 10px;">
-  </div>
-</section>
+
     h1 {
       text-align: center;
-      margin-top: 80px; /* Отступ сверху после фиксированного header */
+      margin-top: 100px;
     }
 
     form {
@@ -68,6 +63,20 @@
     .submit-btn:hover {
       background-color: #333;
     }
+
+    .car-gallery {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 50px;
+    }
+
+    .car-gallery img {
+      width: 300px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
   </style>
 </head>
 <body>
@@ -96,6 +105,13 @@
 
     <button type="submit" class="submit-btn">Завершить регистрацию</button>
   </form>
+  <section>
+    <h2 style="text-align: center; margin-top: 60px;">Наши автомобили</h2>
+    <div class="car-gallery">
+      <img src="assets/images/Audi R8 V10 Plus.jpg" alt="Автомобиль 1">
+      <img src="assets/images/AUDI R8.jpg" alt="Автомобиль 2">
+    </div>
+  </section>
 
   <script>
     document.getElementById('regForm').addEventListener('submit', function (e) {
