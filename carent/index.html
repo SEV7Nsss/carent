@@ -2,48 +2,68 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
+  <body>
+  <header class="header" data-header>
+    <h1>CarRent</h1>
+  </header>
   <title>Регистрация — CarRent</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f5f5dc;
-      padding: 40px;
-    }
-    h1 {
-      text-align: center;
-    }
-    form {
-      max-width: 500px;
-      margin: 0 auto;
-      background-color: white;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    label {
-      display: block;
-      margin-top: 15px;
-    }
-    input {
-      width: 100%;
-      padding: 10px;
-      margin-top: 5px;
-    }
-    .submit-btn {
-      background-color: black;
-      color: white;
-      border: none;
-      padding: 12px;
-      width: 100%;
-      margin-top: 25px;
-      cursor: pointer;
-      font-size: 16px;
-    }
-    .submit-btn:hover {
-      background-color: #333;
-    }
-  </style>
+ <style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #fffff8;
+    padding: 40px;
+  }
+
+  .header {
+    background: #f0f8ff; /* можно заменить var(--alice-blue-1), если переменной нет */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  form {
+    max-width: 500px;
+    margin: 100px auto 0; /* отступ сверху, чтобы форма не заезжала под .header */
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+
+  label {
+    display: block;
+    margin-top: 15px;
+  }
+
+  input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+  }
+
+  .submit-btn {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    margin-top: 25px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  .submit-btn:hover {
+    background-color: #333;
+  }
+</style>
 </head>
 <body>
 
