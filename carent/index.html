@@ -87,21 +87,6 @@
       // Переход сразу на main.html без проверок
       window.location.href = 'main.html';
       return;
-    }
-
-    // Если не admin — проверяем поля
-    const name = document.getElementById('name').value.trim();
-    const phone = document.getElementById('phone').value.trim();
-    const passport = document.getElementById('passport').files.length;
-    const license = document.getElementById('license').files.length;
-
-    if (!name || !phone || !passport || !license) {
-      alert("Пожалуйста, заполните все поля и загрузите фотографии.");
-      return;
-    }
-
-    localStorage.setItem('userName', name);
-    window.location.href = 'main.html';
   });
 </script>
 </body>
