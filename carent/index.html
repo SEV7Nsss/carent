@@ -3,47 +3,47 @@
 <head>
   <meta charset="UTF-8" />
   <title>Регистрация — CarRent</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    /* Фоновое изображение на всю страницу */
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
     body {
       font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 40px;
       background-image: url('https://sev7nsss.github.io/carent/carent/assets/images/blog-4.jpg');
-      background-size: cover;        /* картинка растягивается, сохраняя пропорции */
-      background-position: center;   /* центрируем фон */
+      background-size: cover;
+      background-position: center;
       background-repeat: no-repeat;
-      background-attachment: fixed;  /* фон фиксируется при прокрутке */
-      color: white;                  /* чтобы текст был виден на фоне */
-      text-shadow: 0 0 5px black;    /* тень для текста для читаемости */
+      color: white;
+      text-shadow: 0 0 5px black;
+      padding-top: 80px; /* Отступ под фиксированный header */
     }
 
     .header {
-      background: rgba(240, 248, 255, 0.7); /* полупрозрачный светлый фон */
+      background: rgba(240, 248, 255, 0.8);
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       padding: 20px;
       text-align: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      color: black;
       z-index: 1000;
-      color: black; /* заголовок в шапке черный */
       text-shadow: none;
     }
 
     h1 {
       text-align: center;
-      margin-top: 100px;
-      color: white;
-      text-shadow: 0 0 7px black;
+      margin-bottom: 30px;
     }
 
     form {
       max-width: 500px;
-      margin: 30px auto 0;
-      background-color: rgba(255, 255, 255, 0.9); /* полупрозрачный белый фон */
+      margin: 0 auto 50px;
+      background-color: rgba(255, 255, 255, 0.9);
       padding: 30px;
       border-radius: 12px;
       box-shadow: 0 0 10px rgba(0,0,0,0.3);
